@@ -1,0 +1,18 @@
+
+> next-app@0.1.0 dev
+> next dev
+
+⚠ Port 3000 is in use by process 6862, using available port 3002 instead.
+▲ Next.js 16.2.1 (Turbopack)
+- Local:         http://localhost:3002
+- Network:       http://172.20.10.9:3002
+✓ Ready in 259ms
+⨯ Another next dev server is already running.
+
+- Local:        http://localhost:3001
+- PID:          87635
+- Dir:          /Users/sachinrawat/Desktop/Vishwajeet Portfolio
+- Log:          .next/dev/logs/next-development.log
+
+Run kill 87635 to stop it.
+[?25h
