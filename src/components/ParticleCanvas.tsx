@@ -80,7 +80,7 @@ export default function ParticleCanvas() {
         const dxMouse = p.x - mouseX;
         const dyMouse = p.y - mouseY;
         const distMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
-        const minDist = 180; // Radius of repulsion
+        const minDist = 300; // Increased radius of repulsion
 
         let targetOffsetX = 0;
         let targetOffsetY = 0;
@@ -88,13 +88,13 @@ export default function ParticleCanvas() {
         if (distMouse < minDist && distMouse > 0) {
           const force = (minDist - distMouse) / minDist;
           // Calculate the elastic push offset
-          targetOffsetX = (dxMouse / distMouse) * force * 60; // Max push 60px
-          targetOffsetY = (dyMouse / distMouse) * force * 60;
+          targetOffsetX = (dxMouse / distMouse) * force * 150; // Max push 150px
+          targetOffsetY = (dyMouse / distMouse) * force * 150;
         }
 
         // Elastic interpolation (Spring back) 
-        p.offsetX += (targetOffsetX - p.offsetX) * 0.1;
-        p.offsetY += (targetOffsetY - p.offsetY) * 0.1;
+        p.offsetX += (targetOffsetX - p.offsetX) * 0.08;
+        p.offsetY += (targetOffsetY - p.offsetY) * 0.08;
 
         const drawX = p.x + p.offsetX;
         const drawY = p.y + p.offsetY;

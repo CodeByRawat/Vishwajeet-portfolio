@@ -62,17 +62,18 @@ export default function HeroSection() {
               <span className="text-white/90">Marketing Mastery.</span>
             </motion.h1>
 
-            {/* Sub - Major Goal Highlight */}
+            {/* Sub - Premium & Subtle Highlight */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.7 }}
-              className="mb-10 max-w-lg"
+              className="mb-12 max-w-lg"
             >
-              <div className="bg-[var(--accent)]/10 border border-[var(--accent)]/30 rounded-2xl p-6 relative overflow-hidden group hover:border-[var(--accent)]/60 transition-colors shadow-2xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent)]/5 to-transparent pointer-events-none" />
-                <p className="text-white/90 text-[17px] md:text-lg leading-relaxed relative z-10 border-l-4 border-[var(--accent)] pl-5 font-medium">
-                  We generated <span className="text-white font-bold">10,000+ leads</span> in just <span className="text-[var(--accent)] font-black">90 days</span> for one of our International clients, achieving a staggering <span className="text-[var(--accent)] font-black text-xl">4.6x ROAS</span>.
+              <div className="pl-6 border-l border-white/10 relative">
+                {/* Elegant subtle accent marker on the line */}
+                <div className="absolute top-2 -left-[2px] w-[3px] h-4 bg-[var(--accent)]/80 rounded-full shadow-[0_0_8px_var(--accent)]" />
+                <p className="text-white/50 text-[16px] md:text-[17px] leading-[1.8] font-light tracking-wide">
+                  We generated <strong className="text-white font-normal">10,000+ leads</strong> in just <strong className="text-white font-normal">90 days</strong> for one of our International clients, achieving a staggering <span className="text-[var(--accent)] font-medium">4.6x ROAS</span>.
                 </p>
               </div>
             </motion.div>
