@@ -8,28 +8,28 @@ const services = [
     title: 'Creative-Led Targeting',
     description: "Moving beyond manual segments and building creative assets that act as the targeting mechanism, leveraging Meta's AI to identify and capture high-intent audiences automatically.",
     icon: '🎯',
-    color: 'from-[#4b2312]/50 to-[#fff500]/10'
+    color: 'from-[#4b2312]/50 to-[#c45a28]/10'
   },
   {
     number: '02',
     title: 'Data-Driven Velocity',
     description: 'Eliminating guesswork with rigorous testing frameworks and identifying winning variables early to scale budget into proven performers with surgical precision.',
     icon: '📈',
-    color: 'from-[#fff500]/15 to-[#4b2312]/40'
+    color: 'from-[#c45a28]/15 to-[#4b2312]/40'
   },
   {
     number: '03',
     title: 'Behavioral Creative Strategy',
     description: 'Visuals that demand attention merge behavioral psychology with performance data to engineer creatives that lower CPAs and increase brand resonance.',
     icon: '🎨',
-    color: 'from-[#4b2312]/60 to-[#fff500]/5'
+    color: 'from-[#4b2312]/60 to-[#c45a28]/8'
   },
   {
     number: '04',
     title: 'Full-Funnel Transparency',
     description: 'Beyond basic metrics, custom dashboards tracking the numbers that actually matter — CAC, LTV, & ROAS — ensuring every dollar spent is an investment in growth.',
     icon: '📊',
-    color: 'from-[#fff500]/10 to-[#4b2312]/50'
+    color: 'from-[#c45a28]/12 to-[#4b2312]/50'
   }
 ];
 

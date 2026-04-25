@@ -50,12 +50,12 @@ export default function HeroSection() {
               {/* Label */}
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 px-4 py-2 rounded-full whitespace-nowrap"
                 style={{
-                  background: 'rgba(255,245,0,0.06)',
-                  border: '1px solid rgba(255,245,0,0.2)',
+                  background: 'rgba(196,90,40,0.08)',
+                  border: '1px solid rgba(196,90,40,0.25)',
                   backdropFilter: 'blur(12px)',
                 }}
               >
-                <span className="text-[#fff500]/90 text-[10px] font-semibold tracking-[0.15em] uppercase">
+                <span className="text-[#e07540]/90 text-[10px] font-semibold tracking-[0.15em] uppercase">
                   Meta Ads Performance Specialist
                 </span>
               </div>
@@ -71,8 +71,8 @@ export default function HeroSection() {
               className="font-[family-name:var(--font-outfit)] font-bold text-[clamp(2.2rem,5vw,4.8rem)] leading-[1.07] mb-8"
             >
               <span className="text-white">Driving Scalable</span><br />
-              <span style={{ color: '#fff500' }}>Growth through</span><br />
-              <span style={{ color: '#fff500' }}>Performance-Driven</span><br />
+              <span style={{ color: '#c45a28' }}>Growth through</span><br />
+              <span style={{ color: '#c45a28' }}>Performance-Driven</span><br />
               <span className="text-white">Meta Ads.</span>
             </motion.h1>
 
@@ -94,7 +94,7 @@ export default function HeroSection() {
               <a
                 href="#contact"
                 className="flex items-center gap-2 font-[family-name:var(--font-outfit)] font-semibold px-6 py-3.5 rounded-full transition-all duration-300 hover:scale-105 hover:brightness-110 text-sm md:text-base"
-                style={{ background: '#fff500', color: '#000' }}
+                style={{ background: '#c45a28', color: '#fff' }}
               >
                 Book a Free Strategy Audit
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -147,16 +147,16 @@ export default function HeroSection() {
               {/* Label over image */}
               <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-3 px-5 py-2.5 rounded-full whitespace-nowrap z-30"
                 style={{
-                  background: 'rgba(255,245,0,0.06)',
-                  border: '1px solid rgba(255,245,0,0.2)',
+                  background: 'rgba(196,90,40,0.08)',
+                  border: '1px solid rgba(196,90,40,0.25)',
                   backdropFilter: 'blur(12px)',
                 }}
               >
-                <span className="w-px h-4 rounded-full" style={{ background: 'rgba(255,245,0,0.4)' }} />
-                <span className="text-[#fff500]/90 text-[11px] font-semibold tracking-[0.2em] uppercase">
+                <span className="w-px h-4 rounded-full" style={{ background: 'rgba(196,90,40,0.5)' }} />
+                <span className="text-[#e07540]/90 text-[11px] font-semibold tracking-[0.2em] uppercase">
                   Meta Ads Performance Specialist
                 </span>
-                <span className="w-px h-4 rounded-full" style={{ background: 'rgba(255,245,0,0.4)' }} />
+                <span className="w-px h-4 rounded-full" style={{ background: 'rgba(196,90,40,0.5)' }} />
               </div>
             </div>
           </motion.div>

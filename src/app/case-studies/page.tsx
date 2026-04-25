@@ -24,7 +24,7 @@ const caseStudies = [
       { label: 'Timeline', value: '60 Days' },
     ],
     color: 'from-[#4b2312]/60 to-[#1a0a04]/80',
-    accentColor: '#fff500',
+    accentColor: '#c45a28',
   },
   {
     id: 2,
@@ -44,7 +44,7 @@ const caseStudies = [
       { label: 'Timeline', value: '8 Weeks' },
     ],
     color: 'from-[#0a1a0a]/80 to-[#4b2312]/40',
-    accentColor: '#fff500',
+    accentColor: '#c45a28',
   },
   {
     id: 3,
@@ -64,7 +64,7 @@ const caseStudies = [
       { label: 'Timeline', value: '45 Days' },
     ],
     color: 'from-[#4b2312]/50 to-[#2a1208]/70',
-    accentColor: '#fff500',
+    accentColor: '#c45a28',
   },
   {
     id: 4,
@@ -84,7 +84,7 @@ const caseStudies = [
       { label: 'Timeline', value: '90 Days' },
     ],
     color: 'from-[#0d0d1a]/80 to-[#4b2312]/50',
-    accentColor: '#fff500',
+    accentColor: '#c45a28',
   },
   {
     id: 5,
@@ -104,7 +104,7 @@ const caseStudies = [
       { label: 'Timeline', value: '75 Days' },
     ],
     color: 'from-[#4b2312]/60 to-[#0a0a0a]/80',
-    accentColor: '#fff500',
+    accentColor: '#c45a28',
   },
   {
     id: 6,
@@ -124,7 +124,7 @@ const caseStudies = [
       { label: 'Timeline', value: '60 Days' },
     ],
     color: 'from-[#1a0f00]/80 to-[#4b2312]/50',
-    accentColor: '#fff500',
+    accentColor: '#c45a28',
   },
 ];
 
