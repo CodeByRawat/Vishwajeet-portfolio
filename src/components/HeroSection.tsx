@@ -35,7 +35,7 @@ export default function HeroSection() {
             transition={{ delay: 0.2, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className="lg:hidden flex justify-center pt-28 pb-2"
           >
-            <div className="relative w-[240px] h-[310px]">
+            <div className="relative w-[320px] h-[400px]">
               <Image
                 src="/new.png"
                 alt="Vishwajeet Singh - Meta Ads Expert"
@@ -63,7 +63,7 @@ export default function HeroSection() {
           </motion.div>
 
           {/* Left content */}
-          <div className="flex-1 pb-16 lg:pb-0 lg:pt-8">
+          <div className="flex-1 pb-16 lg:pb-0 lg:pt-8 flex flex-col items-center lg:items-start text-center lg:text-left">
             <motion.h1
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -89,7 +89,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.7 }}
-              className="flex flex-wrap items-center gap-4"
+              className="flex flex-wrap justify-center lg:justify-start items-center gap-4"
             >
               <a
                 href="#contact"
