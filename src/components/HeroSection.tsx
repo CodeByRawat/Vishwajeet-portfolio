@@ -4,13 +4,6 @@ import { useRef } from 'react';
 import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-const BADGE_AVATARS = [
-  'https://i.pravatar.cc/100?img=1',
-  'https://i.pravatar.cc/100?img=2',
-  'https://i.pravatar.cc/100?img=3',
-  'https://i.pravatar.cc/100?img=4',
-];
-
 export default function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -18,171 +11,158 @@ export default function HeroSection() {
     offset: ['start start', 'end start'],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.92]);
 
   return (
     <section
       id="home"
       ref={containerRef}
-      className="relative min-h-screen flex items-center overflow-hidden bg-[var(--bg-dark)]"
+      className="relative overflow-hidden bg-black"
     >
-      {/* Purple ambient glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-purple-700/20 rounded-full blur-[120px] pointer-events-none glow-animate" />
-      {/* Gold accent glow */}
-      <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-[var(--accent)]/10 rounded-full blur-[100px] pointer-events-none" />
+      {/* Ambient glow */}
+      <div
+        className="absolute top-1/2 right-1/3 -translate-y-1/2 w-[700px] h-[700px] rounded-full blur-[180px] pointer-events-none"
+        style={{ background: 'rgba(75,35,18,0.45)' }}
+      />
 
-      <div className="container mx-auto px-6 pt-28 pb-16 relative z-10">
-        <motion.div style={{ y, opacity, scale }} className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Content */}
-          <div>
-            {/* Eyebrow */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.7 }}
-              className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-8"
-            >
-              <span className="text-sm text-white/70 font-medium">Meta Certified Ads Expert</span>
-            </motion.div>
+      <motion.div style={{ opacity }} className="relative z-10">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-10 min-h-screen flex flex-col lg:flex-row lg:items-center">
 
-            {/* Headline */}
+          {/* Mobile image — above headline */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:hidden flex justify-center pt-28 pb-2"
+          >
+            <div className="relative w-[240px] h-[310px]">
+              <Image
+                src="/new.png"
+                alt="Vishwajeet Singh - Meta Ads Expert"
+                fill
+                className="object-contain object-bottom"
+                priority
+              />
+              {/* Bottom fade */}
+              <div className="absolute bottom-0 left-0 right-0 h-[40%] pointer-events-none"
+                style={{ background: 'linear-gradient(to top, #000000 0%, rgba(0,0,0,0.7) 40%, transparent 100%)' }}
+              />
+              {/* Label */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 px-4 py-2 rounded-full whitespace-nowrap"
+                style={{
+                  background: 'rgba(255,245,0,0.06)',
+                  border: '1px solid rgba(255,245,0,0.2)',
+                  backdropFilter: 'blur(12px)',
+                }}
+              >
+                <span className="text-[#fff500]/90 text-[10px] font-semibold tracking-[0.15em] uppercase">
+                  Meta Ads Performance Specialist
+                </span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Left content */}
+          <div className="flex-1 pb-16 lg:pb-0 lg:pt-8">
             <motion.h1
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.35, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="font-[family-name:var(--font-outfit)] text-5xl lg:text-7xl font-light leading-[1.05] mb-6"
+              transition={{ delay: 0.25, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+              className="font-[family-name:var(--font-outfit)] font-bold text-[clamp(2.2rem,5vw,4.8rem)] leading-[1.07] mb-8"
             >
-              Driving Scalable{' '}
-              <em className="not-italic font-bold text-[var(--accent)]">Growth</em>
-              <br />
-              <em className="not-italic font-bold italic text-[var(--accent)]">with Data-Driven</em>
-              <br />
-              <span className="text-white/90">Marketing Mastery.</span>
+              <span className="text-white">Driving Scalable</span><br />
+              <span style={{ color: '#fff500' }}>Growth through</span><br />
+              <span style={{ color: '#fff500' }}>Performance-Driven</span><br />
+              <span className="text-white">Meta Ads.</span>
             </motion.h1>
 
-            {/* Sub - Premium & Subtle Highlight */}
-            <motion.div
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.7 }}
-              className="mb-12 max-w-lg"
+              className="text-white/50 text-base md:text-lg leading-relaxed mb-8 max-w-[480px]"
             >
-              <div className="pl-6 border-l border-white/10 relative">
-                {/* Elegant subtle accent marker on the line */}
-                <div className="absolute top-2 -left-[2px] w-[3px] h-4 bg-[var(--accent)]/80 rounded-full shadow-[0_0_8px_var(--accent)]" />
-                <p className="text-white/50 text-[16px] md:text-[17px] leading-[1.8] font-light tracking-wide">
-                  We generated <strong className="text-white font-normal">10,000+ leads</strong> in just <strong className="text-white font-normal">90 days</strong> for one of our International clients, achieving a staggering <span className="text-[var(--accent)] font-medium">4.6x ROAS</span>.
-                </p>
-              </div>
-            </motion.div>
+              Trusted by <span className="text-white/80 font-semibold">60+ Global Businesses</span> to Scale Conversions & High-Quality Lead Pipelines
+            </motion.p>
 
-            {/* CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.65, duration: 0.7 }}
-              className="flex flex-wrap gap-4 mb-12"
+              transition={{ delay: 0.6, duration: 0.7 }}
+              className="flex flex-wrap items-center gap-4"
             >
               <a
                 href="#contact"
-                onClick={(e) => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }); }}
-                className="group flex items-center gap-2 bg-[var(--accent)] text-black font-semibold px-8 py-4 rounded-full hover:bg-white transition-all duration-300 hover:scale-105"
+                className="flex items-center gap-2 font-[family-name:var(--font-outfit)] font-semibold px-6 py-3.5 rounded-full transition-all duration-300 hover:scale-105 hover:brightness-110 text-sm md:text-base"
+                style={{ background: '#fff500', color: '#000' }}
               >
-                Get Free Ad Audit
-                <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                Book a Free Strategy Audit
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </a>
               <a
-                href="#services"
-                onClick={(e) => { e.preventDefault(); document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' }); }}
-                className="flex items-center gap-2 glass text-white font-medium px-8 py-4 rounded-full hover:border-white/30 transition-all duration-300"
+                href="/case-studies"
+                className="flex items-center gap-2 font-[family-name:var(--font-outfit)] font-semibold px-6 py-3.5 rounded-full border border-white/20 text-white/80 hover:border-white/50 hover:text-white transition-all duration-300 hover:scale-105 text-sm md:text-base"
               >
-                How I can help you
+                View Case Studies
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
               </a>
             </motion.div>
-
-            {/* Removed internal stats row - shifted to external banner component */}
           </div>
 
-          {/* Right — Portrait */}
+          {/* Desktop image — absolute bottom-right */}
           <motion.div
             initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="relative flex justify-center"
+            transition={{ delay: 0.35, duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            className="hidden lg:flex flex-col items-center absolute right-10 bottom-0"
           >
-            {/* Rotating ring decoration */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="w-[420px] h-[420px] rounded-full border border-[var(--accent)]/10 spin-slow" />
-              <div className="absolute w-[360px] h-[360px] rounded-full border border-purple-500/10 counter-spin" />
+            <div className="relative w-[560px] h-[720px]">
+              <Image
+                src="/new.png"
+                alt="Vishwajeet Singh - Meta Ads Expert"
+                fill
+                className="object-contain object-bottom"
+                priority
+              />
+
+              {/* Soft left/right edge vignette */}
+              <div className="absolute inset-0 pointer-events-none z-10"
+                style={{ background: 'radial-gradient(ellipse 90% 100% at 50% 50%, transparent 55%, rgba(0,0,0,0.55) 100%)' }}
+              />
+
+              {/* Primary bottom fade */}
+              <div className="absolute bottom-0 left-0 right-0 h-[48%] pointer-events-none z-20"
+                style={{ background: 'linear-gradient(to top, #000000 0%, rgba(0,0,0,0.75) 35%, rgba(0,0,0,0.2) 70%, transparent 100%)' }}
+              />
+
+              {/* Warm ambient base glow */}
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[260px] h-[120px] pointer-events-none z-20"
+                style={{ background: 'radial-gradient(ellipse at 50% 100%, rgba(75,35,18,0.35) 0%, transparent 70%)' }}
+              />
+
+              {/* Label over image */}
+              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-3 px-5 py-2.5 rounded-full whitespace-nowrap z-30"
+                style={{
+                  background: 'rgba(255,245,0,0.06)',
+                  border: '1px solid rgba(255,245,0,0.2)',
+                  backdropFilter: 'blur(12px)',
+                }}
+              >
+                <span className="w-px h-4 rounded-full" style={{ background: 'rgba(255,245,0,0.4)' }} />
+                <span className="text-[#fff500]/90 text-[11px] font-semibold tracking-[0.2em] uppercase">
+                  Meta Ads Performance Specialist
+                </span>
+                <span className="w-px h-4 rounded-full" style={{ background: 'rgba(255,245,0,0.4)' }} />
+              </div>
             </div>
-
-            {/* Portrait */}
-            <div className="relative w-[340px] h-[440px] float-animate">
-              {/* Glow behind image */}
-              <div className="absolute inset-0 bg-gradient-to-b from-purple-600/20 via-[var(--accent)]/20 to-transparent rounded-3xl blur-2xl scale-110" />
-              <div className="relative w-full h-full rounded-3xl overflow-hidden glass border border-white/10">
-                <Image
-                  src="/vishwajeet.png"
-                  alt="Vishwajeet Singh - Meta Ads Expert"
-                  fill
-                  className="object-cover object-top"
-                  priority
-                />
-                {/* Mask gradient at bottom */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              </div>
-            </div>
-
-            {/* Trust badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1, duration: 0.5 }}
-              className="absolute bottom-8 right-0 glass rounded-2xl px-5 py-3 flex items-center gap-3 border border-white/10"
-            >
-              <div className="flex -space-x-2">
-                {BADGE_AVATARS.map((src, i) => (
-                  <img key={i} src={src} alt="Client" className="w-8 h-8 rounded-full border-2 border-black" />
-                ))}
-              </div>
-              <div>
-                <div className="text-[var(--accent)] text-sm">★★★★★</div>
-                <div className="text-white/60 text-xs">50+ Happy Clients</div>
-              </div>
-            </motion.div>
-
-            {/* ROAS floating card */}
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1.1, duration: 0.5 }}
-              className="absolute top-12 -left-6 glass rounded-2xl px-5 py-3 border border-white/10"
-            >
-              <div className="text-xs text-white/50 mb-1">Avg. ROAS</div>
-              <div className="font-[family-name:var(--font-outfit)] text-2xl font-bold text-[var(--accent)]">4.6x</div>
-              <div className="flex items-center gap-1 mt-1">
-                <span className="text-green-400 text-xs">↑ 280%</span>
-                <span className="text-white/40 text-xs">vs industry</span>
-              </div>
-            </motion.div>
           </motion.div>
-        </motion.div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        >
-          <span className="text-white/30 text-xs tracking-widest uppercase">Scroll</span>
-          <div className="w-px h-12 bg-gradient-to-b from-white/30 to-transparent animate-pulse" />
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
     </section>
   );
 }

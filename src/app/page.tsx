@@ -8,8 +8,11 @@ import ClientBanner from '@/components/ClientBanner';
 import TestimonialSection from '@/components/TestimonialSection';
 import StatsBanner from '@/components/StatsBanner';
 import ContactSection from '@/components/ContactSection';
+import FAQSection from '@/components/FAQSection';
 import Footer from '@/components/Footer';
 import ParticleCanvas from '@/components/ParticleCanvas';
+import Divider from '@/components/Divider';
+import FloatingWidgets from '@/components/FloatingWidgets';
 
 export default function Home() {
   return (
@@ -17,15 +20,27 @@ export default function Home() {
       <ParticleCanvas />
       <Navbar />
       <HeroSection />
+      <Divider />
       <StatsBanner />
+      <Divider />
       <AchievementsSection />
+      <Divider />
       <AboutSection />
+      <Divider />
       <PremiumClientsSection />
+      <Divider />
       <ClientBanner />
+      <Divider />
       <ServicesSection />
+      <Divider />
       <TestimonialSection />
+      <Divider />
+      <FAQSection />
+      <Divider />
       <ContactSection />
+      <Divider />
       <Footer />
+      <FloatingWidgets />
     </main>
   );
 }

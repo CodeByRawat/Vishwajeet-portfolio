@@ -14,7 +14,7 @@ const allClients = [
 
 export default function ClientBanner() {
   return (
-    <section className="py-20 bg-black/50 border-y border-white/5 overflow-hidden">
+    <section className="py-20 bg-black border-y border-white/5 overflow-hidden">
       <div className="container mx-auto px-6 mb-12 text-center">
         <h3 className="text-white/30 text-xs font-bold tracking-[0.3em] uppercase">
           Trusted by Emerging & Established Brands Everywhere

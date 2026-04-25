@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import ScrollReveal from './ScrollReveal';
 
 export default function ContactSection() {
   const ref = useRef<HTMLDivElement>(null);
@@ -9,7 +10,7 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="py-32 relative overflow-hidden" ref={ref}>
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-950/20 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to bottom, transparent, rgba(75,35,18,0.15), transparent)' }} />
 
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -72,7 +73,7 @@ export default function ContactSection() {
                     type="text"
                     name="first_name"
                     required
-                    placeholder="Sachin"
+                    placeholder="John"
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 text-sm focus:outline-none focus:border-[var(--accent)]/50 transition-colors"
                   />
                 </div>
@@ -82,7 +83,7 @@ export default function ContactSection() {
                     type="text"
                     name="last_name"
                     required
-                    placeholder="Rawat"
+                    placeholder="Doe"
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 text-sm focus:outline-none focus:border-[var(--accent)]/50 transition-colors"
                   />
                 </div>
@@ -105,11 +106,11 @@ export default function ContactSection() {
                   name="budget"
                   className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white/70 text-sm focus:outline-none focus:border-[var(--accent)]/50 transition-colors"
                 >
-                  <option value="" className="bg-[#111]">Select budget range</option>
-                  <option value="under_500" className="bg-[#111]">Under $500/mo</option>
-                  <option value="500_2k" className="bg-[#111]">$500 – $2,000/mo</option>
-                  <option value="2k_10k" className="bg-[#111]">$2,000 – $10,000/mo</option>
-                  <option value="10k_plus" className="bg-[#111]">$10,000+/mo</option>
+                  <option value="" className="bg-black">Select budget range</option>
+                  <option value="under_500" className="bg-black">Under $500/mo</option>
+                  <option value="500_2k" className="bg-black">$500 – $2,000/mo</option>
+                  <option value="2k_10k" className="bg-black">$2,000 – $10,000/mo</option>
+                  <option value="10k_plus" className="bg-black">$10,000+/mo</option>
                 </select>
               </div>
 

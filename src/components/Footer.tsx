@@ -16,8 +16,14 @@ export default function Footer() {
 
       <div className="container mx-auto px-6">
         {/* CTA Banner */}
-        <div className="relative rounded-3xl overflow-hidden mb-20 p-12 text-center">
-          <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent)]/20 via-purple-900/20 to-[var(--accent)]/10" />
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.7 }}
+          className="relative rounded-3xl overflow-hidden mb-20 p-12 text-center"
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent)]/20 via-[#4b2312]/30 to-[var(--accent)]/10" />
           <div className="absolute inset-0 border border-[var(--accent)]/20 rounded-3xl" />
           <div className="relative z-10">
             <h3 className="font-[family-name:var(--font-outfit)] text-4xl lg:text-5xl font-light mb-4">
@@ -33,12 +39,17 @@ export default function Footer() {
               Download the Free Guide →
             </a>
           </div>
-        </div>
+        </motion.div>
 
         {/* Main Footer */}
         <div className="grid lg:grid-cols-5 gap-12 mb-16">
-          {/* Brand */}
-          <div className="lg:col-span-1">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-1"
+          >
             <a href="#home" className="flex items-center gap-2 font-[family-name:var(--font-outfit)] font-bold text-xl text-white mb-4">
               <span className="w-9 h-9 rounded-full bg-[var(--accent)] flex items-center justify-center text-black font-black">V</span>
               Vishwajeet
@@ -57,11 +68,16 @@ export default function Footer() {
                 </a>
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          {/* Links */}
-          {Object.entries(footerLinks).map(([col, links]) => (
-            <div key={col}>
+          {Object.entries(footerLinks).map(([col, links], colIndex) => (
+            <motion.div
+              key={col}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.6, delay: (colIndex + 1) * 0.07 }}
+            >
               <h4 className="font-[family-name:var(--font-outfit)] font-semibold text-white mb-5">{col}</h4>
               <ul className="space-y-3">
                 {links.map((link) => (
@@ -72,19 +88,25 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+        >
           <p className="text-white/20 text-sm">©copyright 2026 Vishwajeet. All rights reserved.</p>
           <div className="flex gap-6">
             {['Privacy Policy', 'Terms & Conditions', 'Cookie Policy'].map((l) => (
               <a key={l} href="#" className="text-white/20 hover:text-white/50 text-sm transition-colors">{l}</a>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );

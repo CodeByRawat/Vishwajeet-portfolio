@@ -1,75 +1,77 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import ScrollReveal from './ScrollReveal';
 
 const services = [
   {
-    title: 'Precision Targeting',
-    description: 'Custom audience architectures built around your funnel — from cold awareness to warm retargeting sequences that convert.',
+    number: '01',
+    title: 'Creative-Led Targeting',
+    description: "Moving beyond manual segments and building creative assets that act as the targeting mechanism, leveraging Meta's AI to identify and capture high-intent audiences automatically.",
     icon: '🎯',
-    color: 'from-blue-500/20 to-purple-500/20'
+    color: 'from-[#4b2312]/50 to-[#fff500]/10'
   },
   {
-    title: 'Data-Driven Scaling',
-    description: 'Replace guesswork with clean metrics. Systematic A/B testing and budget scaling that multiplies your best performers.',
+    number: '02',
+    title: 'Data-Driven Velocity',
+    description: 'Eliminating guesswork with rigorous testing frameworks and identifying winning variables early to scale budget into proven performers with surgical precision.',
     icon: '📈',
-    color: 'from-amber-500/20 to-orange-500/20'
+    color: 'from-[#fff500]/15 to-[#4b2312]/40'
   },
   {
-    title: 'Creative Strategy',
-    description: 'Ads that stop the scroll. I combine psychological triggers with data insights to build creatives that lower your CPA.',
+    number: '03',
+    title: 'Behavioral Creative Strategy',
+    description: 'Visuals that demand attention merge behavioral psychology with performance data to engineer creatives that lower CPAs and increase brand resonance.',
     icon: '🎨',
-    color: 'from-green-500/20 to-emerald-500/20'
+    color: 'from-[#4b2312]/60 to-[#fff500]/5'
   },
   {
-    title: 'Transparent Reporting',
-    description: 'Custom dashboards tracking ROAS, CPL, CAC, and LTV — every metric that proves your investment is working.',
+    number: '04',
+    title: 'Full-Funnel Transparency',
+    description: 'Beyond basic metrics, custom dashboards tracking the numbers that actually matter — CAC, LTV, & ROAS — ensuring every dollar spent is an investment in growth.',
     icon: '📊',
-    color: 'from-rose-500/20 to-pink-500/20'
+    color: 'from-[#fff500]/10 to-[#4b2312]/50'
   }
 ];
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-24 bg-[var(--bg-mid)] relative overflow-hidden">
+    <section id="services" className="py-24 bg-black relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <motion.span 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="text-[var(--accent)] font-semibold tracking-widest uppercase text-sm"
-          >
-            Our Expertise
-          </motion.span>
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl lg:text-5xl font-[family-name:var(--font-outfit)] font-light mt-4"
-          >
-            Built for <em className="not-italic font-bold text-white">Maximum Impact</em>
-          </motion.h2>
+          <ScrollReveal direction="up">
+            <span className="text-[var(--accent)] font-semibold tracking-widest uppercase text-sm">
+              Expertise
+            </span>
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={0.1}>
+            <h2 className="text-4xl lg:text-5xl font-[family-name:var(--font-outfit)] font-bold mt-4">
+              Strategic Core
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={0.18}>
+            <p className="text-white/40 mt-3 text-lg font-light">
+              Built for Scalable Performance
+            </p>
+          </ScrollReveal>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              className="glass p-8 rounded-3xl group hover:border-[var(--accent)]/30 transition-all duration-500"
-            >
-              <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform duration-500`}>
-                {service.icon}
+            <ScrollReveal key={service.title} direction="up" delay={index * 0.12}>
+              <div className="glass p-8 rounded-3xl group hover:border-[var(--accent)]/30 transition-all duration-500 h-full">
+                <div className="mb-6">
+                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center text-3xl group-hover:scale-110 transition-transform duration-500`}>
+                    {service.icon}
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-white group-hover:text-[var(--accent)] transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-white/50 leading-relaxed text-sm italic">
+                  &ldquo;{service.description}&rdquo;
+                </p>
               </div>
-              <h3 className="text-xl font-bold mb-4 text-white group-hover:text-[var(--accent)] transition-colors">
-                {service.title}
-              </h3>
-              <p className="text-white/50 leading-relaxed text-sm">
-                {service.description}
-              </p>
-            </motion.div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

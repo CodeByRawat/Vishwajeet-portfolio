@@ -27,7 +27,7 @@ export default function ParticleCanvas() {
     let height = (canvas.height = window.innerHeight);
     let animId: number;
 
-    const colors = ['rgba(212,163,115,', 'rgba(124,58,237,', 'rgba(255,255,255,'];
+    const colors = ['rgba(255,245,0,', 'rgba(75,35,18,', 'rgba(255,255,255,'];
     const particles: Particle[] = [];
     const COUNT = 100;
 
@@ -124,7 +124,7 @@ export default function ParticleCanvas() {
             ctx.beginPath();
             ctx.moveTo(d1X, d1Y);
             ctx.lineTo(d2X, d2Y);
-            ctx.strokeStyle = `rgba(212,163,115,${0.05 * (1 - dist / 100)})`;
+            ctx.strokeStyle = `rgba(255,245,0,${0.05 * (1 - dist / 100)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }

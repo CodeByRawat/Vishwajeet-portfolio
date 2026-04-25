@@ -2,18 +2,19 @@
 
 import { motion } from 'framer-motion';
 import { useState, useEffect, useCallback } from 'react';
+import ScrollReveal from './ScrollReveal';
 
 const premiumClients = [
-  { name: "Loan EG", location: "Canada", industry: "Real Estate & Mortgage Loan", logoText: "LEG", color: "from-blue-600 to-cyan-500", rating: "9.8" },
-  { name: "SSD GPS", location: "Philippines", industry: "AI Logistics", logoText: "SSD", color: "from-purple-600 to-indigo-500", rating: "9.6" },
-  { name: "MADS Creations", location: "India", industry: "Luxury Interiors", logoText: "MADS", color: "from-amber-600 to-orange-500", rating: "9.9" },
-  { name: "Pancharatna", location: "Dubai", industry: "Real Estate", logoText: "PRE", color: "from-emerald-600 to-teal-500", rating: "9.5" },
-  { name: "Interio Haven", location: "Dubai", industry: "Luxury Interiors", logoText: "IH", color: "from-rose-600 to-pink-500", rating: "9.7" },
-  { name: "City Dental", location: "India", industry: "Healthcare", logoText: "CDC", color: "from-sky-600 to-blue-500", rating: "9.4" },
-  { name: "Scrap Yodha", location: "India", industry: "B2B Scrap Dealer", logoText: "SY", color: "from-orange-700 to-yellow-600", rating: "9.2" },
-  { name: "Nikita Greentech", location: "India", industry: "Manufacturing", logoText: "NGR", color: "from-green-600 to-emerald-500", rating: "9.3" },
-  { name: "Bawri Banjari", location: "India", industry: "Jewellery Brand", logoText: "BB", color: "from-fuchsia-600 to-rose-500", rating: "9.6" },
-  { name: "Shiv Shankar", location: "India", industry: "Wellness Brand", logoText: "SSA", color: "from-amber-700 to-yellow-600", rating: "9.5" }
+  { name: "Loan EG", location: "Canada", industry: "Real Estate & Mortgage Loan", logoText: "LEG", color: "from-[#4b2312] to-[#6b3318]", rating: "9.8" },
+  { name: "SSD GPS", location: "Philippines", industry: "AI Logistics", logoText: "SSD", color: "from-[#3a1b0e] to-[#5c2a15]", rating: "9.6" },
+  { name: "MADS Creations", location: "India", industry: "Luxury Interiors", logoText: "MADS", color: "from-[#6b3318] to-[#4b2312]", rating: "9.9" },
+  { name: "Pancharatna", location: "Dubai", industry: "Real Estate", logoText: "PRE", color: "from-[#4b2312] to-[#2a1208]", rating: "9.5" },
+  { name: "Interio Haven", location: "Dubai", industry: "Luxury Interiors", logoText: "IH", color: "from-[#5c2a15] to-[#3a1b0e]", rating: "9.7" },
+  { name: "City Dental", location: "India", industry: "Healthcare", logoText: "CDC", color: "from-[#2a1208] to-[#4b2312]", rating: "9.4" },
+  { name: "Scrap Yodha", location: "India", industry: "B2B Scrap Dealer", logoText: "SY", color: "from-[#4b2312] to-[#3a1b0e]", rating: "9.2" },
+  { name: "Nikita Greentech", location: "India", industry: "Manufacturing", logoText: "NGR", color: "from-[#3a1b0e] to-[#6b3318]", rating: "9.3" },
+  { name: "Bawri Banjari", location: "India", industry: "Jewellery Brand", logoText: "BB", color: "from-[#6b3318] to-[#2a1208]", rating: "9.6" },
+  { name: "Shiv Shankar", location: "India", industry: "Wellness Brand", logoText: "SSA", color: "from-[#2a1208] to-[#5c2a15]", rating: "9.5" }
 ];
 
 export default function PremiumClientsSection() {
@@ -37,24 +38,16 @@ export default function PremiumClientsSection() {
     <section id="results" className="py-24 relative overflow-hidden bg-[var(--bg-dark)]">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <motion.span 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="text-[var(--accent)] font-semibold tracking-widest uppercase text-sm"
-          >
-            Portfolio Spotlight
-          </motion.span>
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl lg:text-5xl font-[family-name:var(--font-outfit)] font-light mt-4 mb-4"
-          >
-            Premium <em className="not-italic font-bold text-white">Global Partners</em>
-          </motion.h2>
-          <p className="text-white/40 max-w-2xl mx-auto">
-            Trusted by industry leaders across Canada, Dubai, Philippines, and India.
-          </p>
+          <ScrollReveal direction="up">
+            <span className="text-[var(--accent)] font-semibold tracking-widest uppercase text-sm">
+              Portfolio Spotlight
+            </span>
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={0.1}>
+            <h2 className="text-4xl lg:text-5xl font-[family-name:var(--font-outfit)] font-light mt-4 mb-4">
+              Premium Brands. <em className="not-italic font-bold text-white">Global Reach.</em><br />Proven Results.
+            </h2>
+          </ScrollReveal>
         </div>
 
         {/* 3D Stacked Carousel Container */}

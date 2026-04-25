@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --accent: #d4a373;
-  --accent-light: #e6ccb2;
-  --accent-dark: #b08055;
-  --bg-dark: #0a0a0a;
-  --bg-mid: #111111;
-  --purple: #7c3aed;
-  --purple-glow: rgba(124, 58, 237, 0.4);
-  --gold-glow: rgba(212, 163, 115, 0.5);
+  --accent: #fff500;
+  --accent-light: #ffff66;
+  --accent-dark: #ccb400;
+  --bg-dark: #000000;
+  --bg-mid: #000000;
+  --purple: #4b2312;
+  --purple-glow: rgba(75, 35, 18, 0.4);
+  --gold-glow: rgba(255, 245, 0, 0.5);
 }
 
 html {
@@ -19,7 +19,6 @@ body {
   background: var(--bg-dark);
   color: white;
   overflow-x: hidden;
-  cursor: none;
 }
 
 /* Custom Cursor */
@@ -44,7 +43,7 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid rgba(212, 163, 115, 0.5);
+  border: 1px solid rgba(255, 245, 0, 0.3);
   pointer-events: none;
   z-index: 9998;
   transform: translate(-50%, -50%);
@@ -70,7 +69,7 @@ body:has(button:hover) .cursor-ring {
   width: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #000000;
 }
 ::-webkit-scrollbar-thumb {
   background: var(--accent);
@@ -92,6 +91,7 @@ body:has(button:hover) .cursor-ring {
 section {
   position: relative;
 }
+
 
 /* Gradient text */
 .gradient-text {
